@@ -6,14 +6,14 @@ export default function Comics() {
   const [comics, setComics] = useState([]);
   useEffect(() => {
     async function getComic() {
-      const res = await fetch(
-        'http://localhost:61977/.netlify/functions/getXKCD'
-      );
+      // const res = await fetch(
+      //   'http://localhost:61977/.netlify/functions/getXKCD'
+      // );
 
       const result = await res.json();
       setComics(result);
     }
-    getComic();
+    // getComic();
   }, []);
 
   return (
