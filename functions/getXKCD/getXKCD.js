@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 
-const getXKCD = async function () {
+const handler = async function () {
   try {
     const response = await fetch('https://xkcd.com/info.0.json', {
       headers: { Accept: 'application/json' },
@@ -13,7 +13,7 @@ const getXKCD = async function () {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ msg: data.title }),
+      body: JSON.stringify(data),
     };
   } catch (error) {
     // output to netlify function log
@@ -26,4 +26,4 @@ const getXKCD = async function () {
   }
 };
 
-module.exports = { getXKCD };
+module.exports = { handler };
