@@ -1,3 +1,9 @@
+import Comics from './views/Comics';
+
 export default function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <main className="app">
+      <Comics />
+    </main>
+  );
 }
