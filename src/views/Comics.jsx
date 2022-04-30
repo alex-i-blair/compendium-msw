@@ -1,18 +1,16 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import Comic from '../components/Comic';
+import ComicList from '../components/ComicList';
 
 export default function Comics() {
   const [comics, setComics] = useState([]);
   useEffect(() => {
-    async function getComic() {
+    async function getComics() {
       const res = await fetch('/.netlify/functions/getXKCD');
-
       const result = await res.json();
-      console.log(result);
       setComics(result);
     }
-    getComic();
+    getComics();
   }, []);
 
   return (
@@ -27,7 +25,7 @@ export default function Comics() {
         </div>
       </section>
       <section className="list-container">
-        <Comic comics={comics} />
+        <ComicList comics={comics} />
       </section>
     </>
   );
