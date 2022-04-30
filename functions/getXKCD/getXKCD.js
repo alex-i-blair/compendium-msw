@@ -27,7 +27,7 @@ const handler = async function () {
         body: JSON.stringify({ msg: error.message }),
       };
     }
-  } while (comicsArr.length < 8);
+  } while (comicsArr.length < 7);
   return {
     statusCode: 200,
     body: JSON.stringify(comicsArr),
