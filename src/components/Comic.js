@@ -5,7 +5,8 @@ export default function Comic({ comic, index }) {
   return (
     <div>
       <p>{date}</p>
-      <img src={comic.img} alt="" />
+      <h4>{comic.title}</h4>
+      <img src={comic.img} alt={comic.alt} />
     </div>
   );
 }
