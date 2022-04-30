@@ -4,9 +4,10 @@ import Comic from './Comic';
 export default function ComicList({ comics }) {
   return (
     <div className="comic">
-      {comics.map((comic, i) => (
-        <Comic key={Number(comic.num) + i} comic={comic} />
-      ))}
+      {comics.map((comic) => {
+        console.log(comic.num);
+        return <Comic key={comic.num} comic={comic} />;
+      })}
     </div>
   );
 }
