@@ -2,9 +2,9 @@ const fetch = require('node-fetch');
 
 const handler = async function () {
   const comicsArr = [];
+  let id = false;
   do {
     try {
-      let id = false;
       id ? (id = `${id}/`) : (id = '');
       const url = `https://xkcd.com/${id}info.0.json`;
       const response = await fetch(url, {
@@ -16,7 +16,7 @@ const handler = async function () {
       }
       const data = await response.json();
       comicsArr.push(data);
-      id = data.num - 1;
+      id = Number(data.num) - 1;
       console.log(comicsArr);
     } catch (error) {
       // output to netlify function log
