@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import ComicList from '../components/ComicList';
 import Header from '../components/Header';
+import styles from '../styles/App.css';
 
 export default function Comics() {
   const [comics, setComics] = useState([]);
@@ -21,7 +22,9 @@ export default function Comics() {
 
   useEffect(() => {
     async function getComics() {
-      const res = await fetch('/.netlify/functions/getXKCD');
+      const res = await fetch(
+        'http://localhost:8888/.netlify/functions/getXKCD'
+      );
       const result = await res.json();
       setComics(result);
       setLoading(false);
@@ -31,13 +34,13 @@ export default function Comics() {
 
   return (
     <>
-      <section className="page-top">
-        <Header />
-        <div className="filter">
+      <section className={styles.pageTop}>
+        <Header comics={comics} loading={loading} />
+        <div className={styles.filter}>
           <input placeholder="Filter" value={search} onChange={handleSearch} />
         </div>
       </section>
-      <section className="list-container">
+      <section className={styles.listContainer}>
         {loading ? <p>Loading...</p> : <ComicList comics={comicsList} />}
       </section>
     </>

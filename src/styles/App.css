@@ -1,0 +1,36 @@
+header {
+  background-color: gray;
+  font-weight: bolder;
+}
+
+.pageTop {
+  width: 100%;
+  height: fit-content;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.filter {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+}
+
+.comicCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.comicCard img {
+  width: 75%;
+  margin-bottom: 1.5rem;
+}
+
+p,
+h4 {
+  margin: 0;
+}

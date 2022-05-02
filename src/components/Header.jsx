@@ -1,12 +1,17 @@
 import React from 'react';
-import { getDateByIndex } from '../utils/getDateByIndex';
+import { getDateByData } from '../utils/getDates';
 
-export default function Header() {
+export default function Header({ comics, loading }) {
   return (
     <header>
-      Daily XKCK {'  from '}
-      <span className="end-date">{getDateByIndex(6)}</span> to{' '}
-      <span className="start-date">{getDateByIndex(0)}</span>
+      Last 7 XKCD <br></br>
+      {loading || (
+        <span>
+          <span className="date-range">
+            {getDateByData(comics[6])} to {getDateByData(comics[0])}
+          </span>
+        </span>
+      )}
     </header>
   );
 }
