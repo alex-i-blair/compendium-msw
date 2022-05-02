@@ -4,7 +4,7 @@ import { getDateByData } from '../utils/getDates';
 export default function Header({ comics, loading }) {
   return (
     <header>
-      Last 7 XKCK <br></br>
+      Last 7 XKCD <br></br>
       {loading || (
         <span>
           <span className="date-range">
