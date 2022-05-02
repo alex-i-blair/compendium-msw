@@ -8,3 +8,8 @@ export function getDateByIndex(index) {
     }
   }
 }
+
+export function getDateByData(comic) {
+  const date = new Date(comic.year, comic.month, comic.day);
+  return date.toDateString();
+}

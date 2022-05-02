@@ -1,9 +1,10 @@
 import React from 'react';
-import { getDateByIndex } from '../utils/getDateByIndex';
-export default function Comic({ comic, index }) {
-  const date = getDateByIndex(index);
+import { getDateByData } from '../utils/getDates';
+import styles from '../styles/App.css';
+export default function Comic({ comic }) {
+  const date = getDateByData(comic);
   return (
-    <div>
+    <div className={styles.comicCard}>
       <p>{date}</p>
       <h4>{comic.title}</h4>
       <img src={comic.img} alt={comic.alt} />
