@@ -22,7 +22,9 @@ export default function Comics() {
 
   useEffect(() => {
     async function getComics() {
-      const res = await fetch('/.netlify/functions/getXKCD');
+      const res = await fetch(
+        'http://localhost:8888/.netlify/functions/getXKCD'
+      );
       const result = await res.json();
       setComics(result);
       setLoading(false);
