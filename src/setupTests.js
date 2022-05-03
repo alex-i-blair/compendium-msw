@@ -1,7 +1,8 @@
 global.fetch = (...args) =>
   import('cross-fetch').then(({ default: fetch }) => fetch(...args));
 import { rest } from 'msw';
-const comicURL = 'http://localhost:8888/.netlify/functions/getXKCD';
+const comicURL =
+  'https://teal-sable-3b82d7.netlify.app/.netlify/functions/getXKCD';
 
 import { xkcdApiData } from './tests/fixtures/comicData';
 import { setupServer } from 'msw/node';
